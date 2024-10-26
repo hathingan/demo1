@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Random say hi</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1 id="xinchao"></h1>
+</div>
+<script>
+    const xinchao=["Xin chao, chuc ban mot ngay tot lanh!",
+        "Hello, have a great day!",
+        "Chao mung ban den voi the gioi cua galaxy!",
+        "Hi there, welcome to our site!",
+        "Xin chao, hy vong ngay moi vui ve!",
+        "Hello, wishing you a fantastic day!"];
+
+    function sayHi(){
+        const randomIndex =Math.floor(Math.random() * xinchao.length);
+        return xinchao[randomIndex];
+    }
+    document.getElementById("xinchao").textContent =sayHi();
+</script>
+</body>
+</html>

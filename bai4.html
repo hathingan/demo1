@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bai 4</title>
+    <style>
+
+        body{
+            font-family: 'Lato', sans-serif;
+            margin:0;
+            padding:0;
+        }
+        .container{
+            width:600px;
+            height:300px;
+            background-color: bisque;
+            margin-left:450px;
+        }
+
+        .textarea{
+            margin-left:200px;
+            padding-top:30px;
+            width:600px;
+
+        }
+        .area{
+            width:200px;
+            height:70px;
+        }
+
+        .textF{
+            width:600px;
+            margin-left:200px;
+            padding-top:10px;
+        }
+        .text{
+            width:200px;
+            height:30px;
+        }
+
+        .button{
+            width:600px;
+            height:50px;
+            margin-left:200px;
+            padding-top:20px;
+        }
+        .count{
+            width:200px;
+            height:30px;
+            border-radius:15px;
+            background-color: dodgerblue;
+            color:white;
+
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="textarea">
+        <textarea name="textarea" class="area"></textarea>
+    </div>
+
+    <div class="textF">
+        <input type="text" class="text">
+    </div>
+
+    <div class="button">
+        <button class="count"  onclick=dem()>Count</button>
+    </div>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function dem(){
+        const textA =document.querySelector('.area').value;
+        const textB=document.querySelector('.text').value;
+
+        /* tính số lần xuất hiện textB trong textA*/
+        const regex=new RegExp(textB,'g'); /*biểu thức chính quy*/
+        const matches = textA.match(regex);
+
+        // Xác định số lần xuất hiện
+        const count = matches ? matches.length : 0;
+
+        // Hiển thị kết quả
+        document.getElementById('result').textContent = `So lan xuat hien "${textB}": ${count}`;
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Giai phuong trinh bac 2</title>
+</head>
+
+<body>
+<h1>Giai phuong trinh bac 2</h1>
+<div class="container">
+    <label>Nhap so a: </label>
+    <input type="number" id="a" placeholder="Gia tri cua a">
+
+    <label>Nhap so b: </label>
+    <input type="number" id="b" placeholder="Gia tri cua b">
+
+    <label>Nhap so c: </label>
+    <input type="number" id="c" placeholder="Gia tri cua c">
+
+    <button onclick="giaiPhuongTrinh()">Giai phuong trinh</button>
+
+    <div class="result" id="result"></div>
+
+
+</div>
+<script>
+    function giaiPhuongTrinh(){
+        const a = parseFloat(document.getElementById("a").value);
+        const b = parseFloat(document.getElementById("b").value);
+       const c= parseFloat(document.getElementById("c").value);
+
+       if(a == 0){
+           document.getElementById("result").innerHTML="Day khong phai phuong trinh bac 2!";
+           return;
+       }
+
+       /*tinh delta
+        */
+        const delta = b*b -4*a*c;
+        let resultText="";
+
+        if(delta>0){
+            const x1= (-b + Math.sqrt(delta)) / (2 * a);
+            const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+            resultText = `Phuong trinh co hai nghiem phan biet: x1 = ${x1.toFixed(2)}, x2 = ${x2.toFixed(2)}`;
+        } else if (delta === 0) {
+            const x = -b / (2 * a);
+            resultText = `Phuong trinh co nghiem kep: x = ${x.toFixed(2)}`;
+        } else {
+            resultText = "Phuong trinh vo nghiem!";
+        }
+
+        // Hiển thị kết quả lên trang web
+        document.getElementById("result").innerHTML = resultText;
+
+    }
+
+</script>
+</body>
+</html>
